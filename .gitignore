@@ -3,6 +3,7 @@
 /client/dist/
 *.log
 client/node_modules/
+client/.angular/
 
 /server/dist/
 server/node_modules/
