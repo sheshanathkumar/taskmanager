@@ -1,0 +1,14 @@
+.title-bg{
+    background: linear-gradient(to top, #dfe9f3 0%, white 100%);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.card-style {
+    background: linear-gradient(to top, #e5f04c 0%, #f0ee96 100%);
+    box-shadow: 2px 2px 10px rgb(68, 67, 67);
+}
+
+.card-style:hover{
+    box-shadow: none;
+}

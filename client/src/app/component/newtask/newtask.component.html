@@ -1,0 +1,30 @@
+<h3 class="my-2">New Task</h3>
+<div class="input-group mb-3 my-2">
+    <span class="input-group-text" id="title">Title</span>
+    <input type="text" class="form-control" placeholder="Task Title" [(ngModel)]="title">
+</div>
+
+<div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">
+        <h4>Full Description</h4>
+    </label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="descr" ></textarea>
+</div>
+
+<div class="input-group mb-3" style="gap: 10px;">
+    <select class="form-select" name="Users" (change)="onSelectUserDropDown($event)">
+        <option selected>Select Users</option>
+        <option *ngFor="let user of allUsers" [value]="user.e_id"> {{user.e_name}} </option>
+    </select>
+
+    <select class="form-select" name="priority" (change)="onSelectPriorityDropDown($event)">
+        <option selected>Select Priority</option>
+        <option *ngFor="let p of priority" [value]="p[0]"> {{p[1]}} </option>
+    </select>
+
+</div>
+
+<div class="banner d-flex justify-content-center align-item-center">
+    <button type="button" class="btn btn-outline-success" (click)="createTaskObject()">Create New Task</button>
+    <button type="button" class="btn btn-outline-danger">Reset</button>
+</div>
