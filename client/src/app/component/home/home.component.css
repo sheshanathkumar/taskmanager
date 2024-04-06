@@ -1,9 +1,15 @@
 .column-card {
-    background: rgb(34, 193, 195);
-    background: linear-gradient(96deg, rgba(34, 193, 195, 1) 20%, rgba(34, 193, 195, 1) 42%, rgba(253, 187, 45, 1) 100%);
+    background: linear-gradient(to top, #e5f04c 0%, #f0ee96 100%);
+    box-shadow: none;
     height: 50px;
-    border-radius: 5px;
     padding-left: 10px;
+    border: 2px solid snow;
+    row-gap: 5px;
+    border-radius: 2px;
+}
+
+.column-card:hover{
+    box-shadow: 1px 1px 1px #232402;
 }
 
 .column-card h3{

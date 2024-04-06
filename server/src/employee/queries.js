@@ -20,7 +20,7 @@ const getAllTasks = "select  \n" +
 	" END AS priority \n"+
     " from task t  \n" +
     " inner join employee e on t.created_by = e.e_id  \n" +
-    " inner join task_status s on t.last_status = s.s_id  \n" +
+    " LEFT join task_status s on t.last_status = s.s_id  \n" +
     " inner join task_category c on t.category = c.cat_id \n";
 
 

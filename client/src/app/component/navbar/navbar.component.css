@@ -1,10 +1,12 @@
 .nav-border{
     border-radius: 5px;
+    padding: 5px;
 }
 
 .nav-border:hover{
     background-color: #676768;
     color: azure;
     border: hidden;
+    cursor: pointer;
 }
 

@@ -20,7 +20,6 @@ export class HomeComponent {
   inProgressTasks : Task[] = [];
   holdTasks : Task[] = [];
   closedTasks : Task[] = [];
-  totalCategory = new Array(4);
 
   constructor(private httpClient: HttpService) {
 
@@ -32,11 +31,12 @@ export class HomeComponent {
     } )
 
     this.httpClient.getAllTaskDetail().subscribe( (data) => {
-      console.log(data);
+      
       this.tasks = data;
+      console.log("task data \n",this.tasks);
+      this.saperateTaskCategoryWise(this.tasks);
     } )
-
-    this.saperateTaskCategoryWise(this.tasks);
+    console.log(this.holdTasks, this.newTasks);
   }
 
   saperateTaskCategoryWise (tasks: Task[]) {
@@ -51,7 +51,10 @@ export class HomeComponent {
         this.newTasks.push(x);
       }
     } )
-
+    this.holdTasks.sort( (a,b) => {return Date.parse(b.time) - Date.parse(a.time)  } );
+    this.newTasks.sort( (a,b) => {return Date.parse(b.time) - Date.parse(a.time)  } );
+    this.closedTasks.sort( (a,b) => {return Date.parse(b.time) - Date.parse(a.time)  } );
+    this.inProgressTasks.sort( (a,b) => {return Date.parse(b.time) - Date.parse(a.time)  } );
   } 
 
 

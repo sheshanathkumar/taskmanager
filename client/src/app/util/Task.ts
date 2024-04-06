@@ -3,7 +3,7 @@ export interface Task {
     title : String;
     subject: String;
     author : String;
-    time: String;
+    time: string;
     status: String;
     category : String;
     priority : Number;
