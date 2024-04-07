@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { Task } from '../../util/Task';
 import { CardComponent } from '../card/card.component';
 import { Router } from '@angular/router';
+import { SpinnerComponent } from '../spinner/spinner.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, CardComponent],
+  imports: [CommonModule, CardComponent, SpinnerComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -22,11 +23,14 @@ export class HomeComponent {
   holdTasks: Task[] = [];
   closedTasks: Task[] = [];
 
+  isLoading : boolean = true;
+
   constructor(private httpClient: HttpService, private router: Router) {
 
   }
 
   ngOnInit() {
+
     this.httpClient.getAllCategoryDetail().subscribe((data) => {
       this.categories = data;
     })

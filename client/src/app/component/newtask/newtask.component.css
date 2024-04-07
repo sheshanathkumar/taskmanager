@@ -3,3 +3,17 @@
     width: 100%;
     gap: 30%;
 }
+
+.task-form{
+    width: 100%;
+    margin-top: 10vh;
+}
+
+.form-group{
+    width: 60%;
+    color: #00005a;
+    border-radius: 10px;
+    padding: 20px 30px;
+    box-shadow: 5px 5px 50px #010d33;
+    background: radial-gradient(circle at 10% 20%, rgb(166, 226, 229) 0%, rgb(198, 232, 221) 100.2%);
+}

@@ -5,11 +5,12 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Status } from '../../util/Status';
 import { FormsModule } from '@angular/forms';
+import { SpinnerComponent } from '../spinner/spinner.component';
 
 @Component({
   selector: 'app-status',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, SpinnerComponent],
   templateUrl: './status.component.html',
   styleUrl: './status.component.css'
 })
@@ -25,13 +26,17 @@ export class StatusComponent {
   availableCategory: any[] = [];
 
   catValue = 0;
+  isLoading: boolean = true;
 
   constructor(private http: HttpService, private router: Router) {
+
+    this.loadSpinner();
   }
+
+
 
   getStatusById(id: Number) {
     this.http.getStatusById(id).subscribe((data) => {
-      console.log(data)
       this.statusList = data;
       this.statusList.sort((a, b) => {
         return Date.parse(b.time) - Date.parse(a.time)
@@ -41,6 +46,7 @@ export class StatusComponent {
 
 
   ngOnInit() {
+
     if (this.router.lastSuccessfulNavigation?.extras.state != null) {
       this.currState = this.router.lastSuccessfulNavigation?.extras.state;
       this.task = this.currState.currentTask;
@@ -61,7 +67,6 @@ export class StatusComponent {
         this.availableCategory.push(arr);
       }
     })
-    console.log(this.availableCategory);
   }
 
   showAddStatusIdForm() {
@@ -79,6 +84,8 @@ export class StatusComponent {
   }
 
   addNewStatus(id: number) {
+    this.isLoading = true;
+    this.loadSpinner();
     const obj = {
       taskId: id,
       status: this.newStatus
@@ -100,25 +107,29 @@ export class StatusComponent {
 
   }
 
+  loadSpinner() {
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 2000)
+  }
+
   onSelectChangeCategory(event: Event) {
     this.catValue = parseInt((event.target as HTMLSelectElement).value)
   }
+
   updateCategory() {
+    this.isLoading = true;
+    this.loadSpinner();
     if (this.catValue === 0) {
       window.alert("Please select a value!");
+    } else {
+      console.log(this.catValue, this.currTask.id);
+      this.http.updateCategoryOfTask(this.catValue, this.currTask.id).subscribe(x => {
+        console.log("response ", x);
+        this.router.navigate(['/']);
+      })
     }
-    console.log(this.catValue, this.currTask.id);
-    var newCategory : string = "";
-    this.allCategory.forEach( x => {
-      if (x[0] === this.catValue) {
-        newCategory = ''+x[1];
-      }
-    } )
-    console.log(newCategory);
-    this.http.updateCategoryOfTask(this.catValue, this.currTask.id).subscribe(x => {
-      console.log(x);
-      this.currTask.category = newCategory;
-    })
+
   }
 
 

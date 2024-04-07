@@ -41,7 +41,6 @@ export class HttpService {
 
   getStatusById(taskId : Number) : Observable<Status[]> {
     let url = `${this.getStatusByIdUrl}${taskId}`;
-    console.log(url);
     return this.http.get <Status[]>(url);
   }
 
@@ -51,7 +50,10 @@ export class HttpService {
   
   updateCategoryOfTask( catId: number, taskId:number) : Observable<ModelApiResponse> {
     console.log("from http service-->", catId, taskId)
-    let body = JSON.stringify({'catId': catId, 'taskId': taskId})
+    let body = {
+      catId: catId,
+      taskId:taskId
+    }
     return this.http.post<ModelApiResponse>(this.updateCategoryOfTaskUrl, body);
   }
 

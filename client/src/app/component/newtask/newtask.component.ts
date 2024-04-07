@@ -5,11 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { Task } from '../../util/Task';
 import { NewTask } from '../../util/NewTask';
+import { SpinnerComponent } from '../spinner/spinner.component';
+import { routes } from '../../app.routes';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-newtask',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, SpinnerComponent],
   templateUrl: './newtask.component.html',
   styleUrl: './newtask.component.css'
 })
@@ -22,15 +25,22 @@ export class NewtaskComponent {
   title = "";
   descr = "";
   newTask = new NewTask();
+  isLoading : boolean = true;
 
-
-  constructor( private http : HttpService ) {}
+  constructor( private http : HttpService, private router : Router ) {}
 
   ngOnInit () {
     this.http.getAllUsers().subscribe( (data) => {
       console.log("from all users ", data);
       this.allUsers = data;
     } )
+  }
+
+  loadSpinner () {
+    this.isLoading = true;
+    setTimeout( () => {
+      this.isLoading = false;
+    }, 2000)
   }
 
   onSelectUserDropDown(event : Event) {
@@ -53,6 +63,8 @@ export class NewtaskComponent {
     this.http.createNewTask(this.newTask).subscribe( (x) => {
       console.log(x)
     });
+    this.loadSpinner();
+    this.router.navigate(['/']);
   }
 
 

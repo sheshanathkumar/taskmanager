@@ -3,6 +3,7 @@
     height: 30px;
     background: radial-gradient(circle at 10% 20%, rgb(166, 226, 229) 0%, rgb(198, 232, 221) 100.2%);
     box-shadow: 1px 1px 5px #9b9a9a;
+    color: #00005a;
 }
 
 .task-descr {
@@ -31,7 +32,7 @@
 }
 
 .st-button{
-    width: 70px;
+    width: 80px;
     height: 40px;
     border: 1px solid darkblue;
     border-radius: 5px;
@@ -47,6 +48,12 @@
     font-weight: 500;
 }
 
-.select-form{
+select{
     width: 200px;
+    padding-left: 5px;
+    border-radius: 5px;
+}
+
+select option{
+    font-weight: 500;
 }

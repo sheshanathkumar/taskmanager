@@ -3,7 +3,7 @@
     box-shadow: none;
     height: 50px;
     padding-left: 10px;
-    border: 2px solid snow;
+    border: 1px solid #00005a;
     row-gap: 5px;
     border-radius: 2px;
 }

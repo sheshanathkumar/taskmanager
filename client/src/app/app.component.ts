@@ -10,15 +10,25 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { StatusComponent } from './component/status/status.component';
 import { ContactComponent } from './component/contact/contact.component';
+import { SpinnerComponent } from './component/spinner/spinner.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, NavbarComponent, HomeComponent,
-    CommonModule, NewtaskComponent, StatusComponent, ContactComponent],
+    CommonModule, NewtaskComponent, StatusComponent, ContactComponent,
+    SpinnerComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'taskmanager';
+  isLoading: boolean = true;
+
+  constructor() {
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 3000);
+  }
+
 }

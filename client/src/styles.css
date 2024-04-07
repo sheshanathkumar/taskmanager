@@ -1,8 +1,11 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 body{
-    background: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+    background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
     font-size: medium;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: azure;
+    display: block;
+    height: 100vh;
 }
 

@@ -33,9 +33,7 @@ const addNewStatus = "INSERT INTO TASK_STATUS \n"+
     " (s_descr, updated_at, t_id) \n"+
     " values ( $1, CURRENT_TIMESTAMP, $2)\n";
 
-const updateCategoryOfTask = "UPDATE TASK SET CATEGORY = $1 \n"+
-    " where task_id = $2 ";    
-
+const updateCategoryOfTask = "update task set category=$1, updated_at=current_timestamp where task_id = $2";
 
 const getAllCategory = "select * from task_category";
 const getAllStatusByTask = "select s_id as id, s_descr as status, updated_at as time, t_id as taskId from task_status where t_id = $1";
