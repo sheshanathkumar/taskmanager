@@ -1,1 +1,8 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+body{
+    background: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+    font-size: medium;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+

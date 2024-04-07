@@ -1,10 +1,9 @@
-export interface Task {
-    id : Number;
-    title : String;
-    subject: String;
-    author : String;
-    time: string;
-    status: String;
-    category : String;
-    priority : Number;
+export class Task {
+    id : number = 0;
+    title : string ="";
+    subject: string ="";
+    author : string = "";
+    time: string ="";
+    category : string ="";
+    priority : number = 0;
 }

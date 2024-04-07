@@ -49,7 +49,33 @@ const createNewTask = (req, res) => {
     pool.query(query.createNewTask, [title, descr, priority, author], 
         (err, result) => {
         if (err) throw err;
-        res.status(200).json({"status": "Result Saved"});
+        res.status(200).json( {"code" : 200, 'message': 'Created New Task', 'status': 'success'} );
+    })
+}
+
+const getAllStatusByTask = (req, res) => {
+    const taskId = req.params.taskId;
+    pool.query( query.getAllStatusByTask, [taskId], (err, result) => {
+        if (err) throw err;
+        res.status(200).json(result.rows);
+    }  )
+}
+
+const addNewStatusInTask = (req, res) => {
+    const taskId = req.body.taskId;
+    const status = req.body.status;
+    pool.query ( query.addNewStatus, [status, taskId], (err, result) => {
+        if (err) throw err;
+        res.status(200).json( {"code" : 200, 'message': 'Added New Status', 'status': 'success'} );
+    } )
+}
+
+const updateCategoryOfTask = (req, res) => {
+    const catId = req.body.catId;
+    const taskId = req.body.taskId;
+    pool.query( query.updateCategoryOfTask, [catId, taskId], (err, result) => {
+        if (err) throw err;
+        res.status(200).json( {"code" : 200, 'message': 'Updated Category', 'status': 'success'} );
     })
 }
 
@@ -62,4 +88,7 @@ module.exports = {
     getAllTask,
     getAllCategory,
     createNewTask,
+    getAllStatusByTask,
+    addNewStatusInTask,
+    updateCategoryOfTask,
 }

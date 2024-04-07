@@ -1,0 +1,40 @@
+<div class="task-banner my-3">
+    <div class="task-info d-flex my-1" style="gap: 20px;">
+        <div class="col my-1 mx-1">INC000{{currTask.id}}</div>
+        <div class="col-4 my-1">Title: {{currTask.title}}</div>
+        <div class="col-2 my-1">Assign to: {{currTask.author}}</div>
+        <div class="col-3 my-1">Date: {{ currTask.time | date:'dd-MM-yyyy hh:mm a'}}</div>
+        <div class="col-auto my-1 mx-1">Priority: {{currTask.priority}}</div>
+
+    </div>
+    <div class="task-descr my-3">
+        <h4 class="mx-3" style="padding-top: 10px;"> {{currTask.category | uppercase}} : {{currTask.subject}}</h4>
+    </div>
+
+    <div class="button-group d-flex" style="gap: 10px;" > 
+        <button type="button" class="btn btn-outline-danger" 
+        (click)="showAddStatusIdForm()">Add Status</button>
+    
+        <select class="select-form" (change)="onSelectChangeCategory($event)">
+            <option selected>Select Category</option>
+            <option *ngFor="let c of availableCategory" [value]="c[0]">{{c[1]}}</option>
+          </select>
+        <button type="button" class="btn btn-outline-success mx-3" (click)="updateCategory()">Update Status</button>
+
+    </div>
+    
+
+    <div class="status-form" id="addStatusFormId">
+        <textarea class="form-control my-3" id="textAreaId" [(ngModel)] = "newStatus" rows="5"></textarea>
+        <div class="status-button">
+            <button class="st-button my-3" (click)="addNewStatus(currTask.id)" >Submit</button>
+            <button class="st-button" (click)="closeStatusForm()">Close</button>
+        </div>
+    </div>
+
+    <h4 class="my-3">Status Report</h4>
+    <div class="status-banner d-flex " *ngFor="let status of statusList">
+        <div class="col-2 mx-3 my-2"> {{status.time| date:'dd-MM-yyyy hh:mm a'}} </div>
+        <div class="col my-2">  {{status.status}} </div>
+    </div>
+</div>

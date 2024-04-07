@@ -1,12 +1,9 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a routerLink="/" class="navbar-brand mx-2 nav-border">Task Manager</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<nav class="navbar navbar-expand-lg navbar-light navbar-bg">
+    <a routerLink="/" class="navbar-brand mx-2 nav-border"> <i class="fa fa-tasks" aria-hidden="true"></i> Task Manager</a>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a routerLink="/task" class="nav-link active nav-border">New Task</a>
+        <div class="navbar-nav" style="gap: 25px;">
+            <a routerLink="/task" class="nav-link active nav-border"> <i class="fa fa-plus-circle" aria-hidden="true"></i> New Task</a>
+            <a routerLink="/contact" class="nav-link active nav-border"> <i class="fa fa-address-book" aria-hidden="true"></i> Contact</a>
         </div>
     </div>
     <form class="d-flex mx-4" style="float: right;">

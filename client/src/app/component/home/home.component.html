@@ -1,7 +1,7 @@
 <div class="container my-3">
     <div class="row">
         <div class="col-sm-3 column-card" *ngFor="let cat of categories">
-            <h3>{{cat.cat_descr}} </h3>
+            <h5>{{cat.cat_descr}} </h5>
         </div>
     </div>
 </div>
@@ -12,28 +12,28 @@
         <div class="col-sm-3">
             <div class="row" *ngFor="let t of newTasks">
                 <div class="col">
-                    <app-card [task] = 't'></app-card>
+                     <app-card [task] = 't' (click)="getStatus(t)" ></app-card>
                 </div>
             </div>
         </div>
         <div class="col-sm-3">
             <div class="row" *ngFor="let t of inProgressTasks">
                 <div class="col">
-                    <app-card [task] = 't'></app-card>
+                    <app-card [task] = 't' (click)="getStatus(t)"></app-card>
                 </div>
             </div>
         </div>
         <div class="col-sm-3">
             <div class="row" *ngFor="let t of holdTasks">
                 <div class="col">
-                    <app-card [task] = 't'></app-card>
+                    <app-card [task] = 't' (click)="getStatus(t)"></app-card>
                 </div>
             </div>
         </div>
         <div class="col-sm-3">
             <div class="row" *ngFor="let t of closedTasks">
                 <div class="col">
-                    <app-card [task] = 't'></app-card>
+                    <app-card [task] = 't' (click)="getStatus(t)"></app-card>
                 </div>
             </div>
         </div>

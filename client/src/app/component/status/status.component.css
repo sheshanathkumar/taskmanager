@@ -1,0 +1,52 @@
+.task-banner {
+    border-radius: 5px;
+    height: 30px;
+    background: radial-gradient(circle at 10% 20%, rgb(166, 226, 229) 0%, rgb(198, 232, 221) 100.2%);
+    box-shadow: 1px 1px 5px #9b9a9a;
+}
+
+.task-descr {
+    border-radius: 5px;
+    height: 100px;
+    background: radial-gradient(circle at 10% 20%, rgb(166, 226, 229) 0%, rgb(198, 232, 221) 100.2%);
+    box-shadow: 1px 1px 5px #9b9a9a;
+}
+
+.status-banner{
+    border-radius: 5px;
+    height: 50px;
+    background: radial-gradient(circle at 10% 20%, rgb(166, 226, 229) 0%, rgb(198, 232, 221) 100.2%);
+    box-shadow: 1px 1px 5px #9b9a9a;
+    margin-bottom: 10px;
+}
+
+.status-form{
+    width: 100%;
+    display: none;
+}
+
+.status-button{
+    float: right;
+    
+}
+
+.st-button{
+    width: 70px;
+    height: 40px;
+    border: 1px solid darkblue;
+    border-radius: 5px;
+    float: right;
+    padding: 5px;
+    
+    background-color: #ffffff;
+
+}
+
+.st-button:hover{
+    background: radial-gradient(circle at 10% 20%, rgb(166, 226, 229) 0%, rgb(198, 232, 221) 100.2%);
+    font-weight: 500;
+}
+
+.select-form{
+    width: 200px;
+}

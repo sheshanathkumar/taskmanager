@@ -1,5 +1,5 @@
 .column-card {
-    background: linear-gradient(to top, #e5f04c 0%, #f0ee96 100%);
+    background: radial-gradient(circle at 10% 20%, rgb(166, 226, 229) 0%, rgb(198, 232, 221) 100.2%);
     box-shadow: none;
     height: 50px;
     padding-left: 10px;
@@ -12,10 +12,11 @@
     box-shadow: 1px 1px 1px #232402;
 }
 
-.column-card h3{
+.column-card h5{
     display: flex;
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
     margin-top: 8px;
+    font-weight: 600;
 }

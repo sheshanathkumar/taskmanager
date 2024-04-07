@@ -5,8 +5,9 @@
 }
 
 .card-style {
-    background: linear-gradient(to top, #e5f04c 0%, #f0ee96 100%);
+    background: radial-gradient(circle at 10% 20%, rgb(166, 226, 229) 0%, rgb(198, 232, 221) 100.2%);
     box-shadow: 2px 2px 10px rgb(68, 67, 67);
+    cursor: pointer;
 }
 
 .card-style:hover{

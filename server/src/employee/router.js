@@ -14,6 +14,9 @@ router.get("/user/:id", controller.getEmployeeById)
 // ------ task related apis ----------
 router.get("/task/all", controller.getAllTask);
 router.get("/task/category", controller.getAllCategory);
-router.post("/task/new", controller.createNewTask)
+router.post("/task/new", controller.createNewTask);
+router.get("/status/:taskId", controller.getAllStatusByTask);
+router.post("/status/add", controller.addNewStatusInTask);
+router.post('/task/category/update', controller.updateCategoryOfTask);
 
 module.exports = router

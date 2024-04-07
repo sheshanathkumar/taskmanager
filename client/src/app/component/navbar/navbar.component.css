@@ -1,6 +1,6 @@
 .nav-border{
-    border-radius: 5px;
-    padding: 5px;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .nav-border:hover{
@@ -10,3 +10,8 @@
     cursor: pointer;
 }
 
+.navbar-bg{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: radial-gradient(circle at 10% 20%, rgb(166, 226, 229) 0%, rgb(198, 232, 221) 100.2%);
+}

@@ -1,0 +1,20 @@
+
+.contact{
+    height: 50vh;
+    margin-top: 10vh;
+}
+
+.contact-grid {
+    width: 35vw;
+    
+    background: radial-gradient(circle at 10% 20%, rgb(166, 226, 229) 0%, rgb(198, 232, 221) 100.2%);
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 2px 2px 50px #beb550;
+}
+
+
+.right{
+    border-radius: 10px;
+    background: linear-gradient(to top, #e5f04c 0%, #f0ee96 100%);
+}

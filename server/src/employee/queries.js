@@ -29,8 +29,16 @@ const createNewTask = " INSERT INTO task( \n"+
 	" created_by, category) \n" +
 	" VALUES ($1, $2, $3, CURRENT_TIMESTAMP, $4, 1) "
 
+const addNewStatus = "INSERT INTO TASK_STATUS \n"+
+    " (s_descr, updated_at, t_id) \n"+
+    " values ( $1, CURRENT_TIMESTAMP, $2)\n";
+
+const updateCategoryOfTask = "UPDATE TASK SET CATEGORY = $1 \n"+
+    " where task_id = $2 ";    
+
 
 const getAllCategory = "select * from task_category";
+const getAllStatusByTask = "select s_id as id, s_descr as status, updated_at as time, t_id as taskId from task_status where t_id = $1";
 
 
 module.exports = {
@@ -40,4 +48,7 @@ module.exports = {
     getAllTasks,
     getAllCategory,
     createNewTask,
+    getAllStatusByTask,
+    addNewStatus,
+    updateCategoryOfTask,
 }
