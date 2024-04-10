@@ -1,13 +1,14 @@
 {
-  "name": "server",
+  "name": "taskmanager",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "start":"node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Sheshanath",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
