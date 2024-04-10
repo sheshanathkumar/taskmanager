@@ -7,3 +7,6 @@ client/.angular/
 
 /server/dist/
 server/node_modules/
+
+/mongo-db-server/dist/
+mongo-db-server/node_modules/
