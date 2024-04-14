@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { Status } from '../../util/Status';
 import { FormsModule } from '@angular/forms';
 import { SpinnerComponent } from '../spinner/spinner.component';
+import { StatusObj } from '../../util/StatusObj';
 
 @Component({
   selector: 'app-status',
@@ -17,7 +18,7 @@ import { SpinnerComponent } from '../spinner/spinner.component';
 export class StatusComponent {
 
   task: any;
-  statusList: Status[] = [];
+  statusList: StatusObj []= [];
   currState: any;
   currTask = new Task();
   newStatus = "";
@@ -37,7 +38,9 @@ export class StatusComponent {
 
   getStatusById(id: Number) {
     this.http.getStatusById(id).subscribe((data) => {
-      this.statusList = data;
+      
+      this.statusList = data[0].status;
+      console.log(this.statusList);
       this.statusList.sort((a, b) => {
         return Date.parse(b.time) - Date.parse(a.time)
       })
@@ -83,29 +86,29 @@ export class StatusComponent {
     }
   }
 
-  addNewStatus(id: number) {
-    this.isLoading = true;
-    this.loadSpinner();
-    const obj = {
-      taskId: id,
-      status: this.newStatus
-    }
+  // addNewStatus(id: number) {
+  //   this.isLoading = true;
+  //   this.loadSpinner();
+  //   const obj = {
+  //     taskId: id,
+  //     status: this.newStatus
+  //   }
 
-    console.log(obj)
-    this.http.addNewStatusInTask(obj).subscribe(x => {
-      console.log(x);
-      var currStatus = new Status();
-      if (x.code === 200) {
-        currStatus.taskid = id;
-        currStatus.status = this.newStatus;
-        currStatus.time = '' + new Date();
-      }
-      this.statusList.push(currStatus);
-      this.statusList.sort((a, b) => { return Date.parse(b.time) - Date.parse(a.time) });
-      this.closeStatusForm();
-    })
+  //   console.log(obj)
+  //   this.http.addNewStatusInTask(obj).subscribe(x => {
+  //     console.log(x);
+  //     var currStatus = new Status();
+  //     if (x.code === 200) {
+  //       currStatus.taskid = id;
+  //       currStatus.status = this.newStatus;
+  //       currStatus.time = '' + new Date();
+  //     }
+  //     this.statusList.push(currStatus);
+  //     this.statusList.sort((a, b) => { return Date.parse(b.time) - Date.parse(a.time) });
+  //     this.closeStatusForm();
+  //   })
 
-  }
+  // }
 
   loadSpinner() {
     setTimeout(() => {
