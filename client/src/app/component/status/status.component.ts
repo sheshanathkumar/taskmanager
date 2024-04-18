@@ -37,6 +37,7 @@ export class StatusComponent {
 
 
   getStatusById(id: Number) {
+
     this.http.getStatusById(id).subscribe((data) => {
       
       this.statusList = data[0].status;
@@ -86,29 +87,29 @@ export class StatusComponent {
     }
   }
 
-  // addNewStatus(id: number) {
-  //   this.isLoading = true;
-  //   this.loadSpinner();
-  //   const obj = {
-  //     taskId: id,
-  //     status: this.newStatus
-  //   }
+  addNewStatus(id: number) {
+    this.isLoading = true;
+    this.loadSpinner();
+    const obj = {
+      taskId: id,
+      status: this.newStatus
+    }
 
-  //   console.log(obj)
-  //   this.http.addNewStatusInTask(obj).subscribe(x => {
-  //     console.log(x);
-  //     var currStatus = new Status();
-  //     if (x.code === 200) {
-  //       currStatus.taskid = id;
-  //       currStatus.status = this.newStatus;
-  //       currStatus.time = '' + new Date();
-  //     }
-  //     this.statusList.push(currStatus);
-  //     this.statusList.sort((a, b) => { return Date.parse(b.time) - Date.parse(a.time) });
-  //     this.closeStatusForm();
-  //   })
+    // console.log(obj)
+    // this.http.addNewStatusInTask(obj).subscribe(x => {
+    //   console.log(x);
+    //   var currStatus = new Status();
+    //   if (x.code === 200) {
+    //     currStatus.taskid = id;
+    //     currStatus.status = this.newStatus;
+    //     currStatus.time = '' + new Date();
+    //   }
+    //   this.statusList.push(currStatus);
+    //   this.statusList.sort((a, b) => { return Date.parse(b.time) - Date.parse(a.time) });
+    //   this.closeStatusForm();
+    // })
 
-  // }
+  }
 
   loadSpinner() {
     setTimeout(() => {
