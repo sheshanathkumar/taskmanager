@@ -19,9 +19,9 @@ import { Router } from '@angular/router';
 export class NewtaskComponent {
 
   allUsers : any = [];
-  selectedUser = 0;
-  priority = [ [1, "Low"], [2, "Medium"],[3, "Moderate"],[4, "High"],[5, "Extream"] ];
-  selectedPriority = 0;
+  selectedUser = "";
+  priority = [ [1, "Low"], [2, "Medium"],[3, "Moderate"],[4, "High"],[5, "Extreme"] ];
+  selectedPriority = "";
   title = "";
   descr = "";
   newTask = new NewTask();
@@ -44,12 +44,12 @@ export class NewtaskComponent {
   }
 
   onSelectUserDropDown(event : Event) {
-    this.selectedUser = parseInt ((event.target as HTMLSelectElement).value);
+    this.selectedUser = (event.target as HTMLSelectElement).value;
     console.log(this.selectedUser)
   } 
 
   onSelectPriorityDropDown(event : Event) {
-    this.selectedPriority = parseInt ((event.target as HTMLSelectElement).value);
+    this.selectedPriority = (event.target as HTMLSelectElement).value;
     console.log(this.selectedPriority);
   }
 

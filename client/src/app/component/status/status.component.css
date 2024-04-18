@@ -1,6 +1,6 @@
 .task-banner {
     border-radius: 5px;
-    height: 30px;
+    height: 50px;
     background: radial-gradient(circle at 10% 20%, rgb(166, 226, 229) 0%, rgb(198, 232, 221) 100.2%);
     box-shadow: 1px 1px 5px #9b9a9a;
     color: #00005a;
@@ -8,10 +8,18 @@
 
 .task-descr {
     border-radius: 5px;
-    height: 100px;
+    height: fit-content;
     background: radial-gradient(circle at 10% 20%, rgb(166, 226, 229) 0%, rgb(198, 232, 221) 100.2%);
     box-shadow: 1px 1px 5px #9b9a9a;
+    color: #000;
+    padding-bottom: 10px;
 }
+
+p {
+    font-weight: 400;
+    font-size: medium;
+}
+
 
 .status-banner{
     border-radius: 5px;
@@ -20,6 +28,7 @@
     box-shadow: 1px 1px 5px #9b9a9a;
     margin-bottom: 10px;
     padding-right: 10px;
+    color: #000;
 }
 
 .status-form{

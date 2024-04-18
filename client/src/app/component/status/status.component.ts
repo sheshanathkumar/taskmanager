@@ -3,7 +3,6 @@ import { Task } from '../../util/Task';
 import { HttpService } from '../../service/httpservice';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { Status } from '../../util/Status';
 import { FormsModule } from '@angular/forms';
 import { SpinnerComponent } from '../spinner/spinner.component';
 import { StatusObj } from '../../util/StatusObj';
@@ -18,7 +17,7 @@ import { StatusObj } from '../../util/StatusObj';
 export class StatusComponent {
 
   task: any;
-  statusList: StatusObj []= [];
+  statusList: StatusObj[] = [];
   currState: any;
   currTask = new Task();
   newStatus = "";
@@ -26,7 +25,7 @@ export class StatusComponent {
   allCategory = [[1, 'new'], [2, 'in progress'], [3, 'hold'], [4, 'closed']];
   availableCategory: any[] = [];
 
-  catValue = 0;
+  catValue = "";
   isLoading: boolean = true;
 
   constructor(private http: HttpService, private router: Router) {
@@ -39,8 +38,8 @@ export class StatusComponent {
   getStatusById(id: Number) {
 
     this.http.getStatusById(id).subscribe((data) => {
-      
-      this.statusList = data[0].status;
+
+      this.statusList = data.status;
       console.log(this.statusList);
       this.statusList.sort((a, b) => {
         return Date.parse(b.time) - Date.parse(a.time)
@@ -95,36 +94,37 @@ export class StatusComponent {
       status: this.newStatus
     }
 
-    // console.log(obj)
-    // this.http.addNewStatusInTask(obj).subscribe(x => {
-    //   console.log(x);
-    //   var currStatus = new Status();
-    //   if (x.code === 200) {
-    //     currStatus.taskid = id;
-    //     currStatus.status = this.newStatus;
-    //     currStatus.time = '' + new Date();
-    //   }
-    //   this.statusList.push(currStatus);
-    //   this.statusList.sort((a, b) => { return Date.parse(b.time) - Date.parse(a.time) });
-    //   this.closeStatusForm();
-    // })
+    console.log(obj)
+    this.http.addNewStatusInTask(obj).subscribe(x => {
+      console.log(x);
+      var currStatus = new StatusObj();
+      if (x.code == 200) {
+        currStatus.title = this.newStatus;
+        currStatus.time = '' + new Date();
+
+        this.statusList.push(currStatus);
+        this.statusList.sort((a, b) => { return Date.parse(b.time) - Date.parse(a.time) });
+        this.newStatus = "";
+        this.closeStatusForm();
+      }
+    })
 
   }
 
   loadSpinner() {
     setTimeout(() => {
       this.isLoading = false;
-    }, 2000)
+    }, 1000)
   }
 
   onSelectChangeCategory(event: Event) {
-    this.catValue = parseInt((event.target as HTMLSelectElement).value)
+    this.catValue = (event.target as HTMLSelectElement).value
   }
 
   updateCategory() {
     this.isLoading = true;
     this.loadSpinner();
-    if (this.catValue === 0) {
+    if (this.catValue === "") {
       window.alert("Please select a value!");
     } else {
       console.log(this.catValue, this.currTask.id);

@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { NewTask } from '../util/NewTask';
 import { Status } from '../util/Status';
 import { ModelApiResponse } from '../util/modelApiResponse';
+import { StatusObj } from '../util/StatusObj';
 
 @Injectable({
   providedIn: 'root'
@@ -39,16 +40,16 @@ export class HttpService {
     return this.http.post(this.createNewTaskUrl, task);
   }
 
-  getStatusById(taskId : Number) : Observable<Status[]> {
+  getStatusById(taskId : Number) : Observable<any> {
     let url = `${this.getStatusByIdUrl}${taskId}`;
-    return this.http.get <Status[]>(url);
+    return this.http.get <any>(url);
   }
 
   addNewStatusInTask ( status : any ) : Observable<ModelApiResponse> {
     return this.http.post<ModelApiResponse> (this.addStatusInTaskUrl, status);
   }
   
-  updateCategoryOfTask( catId: number, taskId:number) : Observable<ModelApiResponse> {
+  updateCategoryOfTask( catId: string, taskId:number) : Observable<ModelApiResponse> {
     console.log("from http service-->", catId, taskId)
     let body = {
       catId: catId,

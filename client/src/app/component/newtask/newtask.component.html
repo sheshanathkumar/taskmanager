@@ -10,18 +10,18 @@
             <label for="exampleFormControlTextarea1" class="form-label">
                 <h4>Full Description</h4>
             </label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="descr"></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" [(ngModel)]="descr"></textarea>
         </div>
 
         <div class="input-group mb-3" style="gap: 10px;">
             <select class="form-select" name="Users" (change)="onSelectUserDropDown($event)">
                 <option selected>Select Users</option>
-                <option *ngFor="let user of allUsers" [value]="user.e_id"> {{user.e_name}} </option>
+                <option *ngFor="let user of allUsers" [value]="user.e_name"> {{user.e_name}} </option>
             </select>
 
             <select class="form-select" name="priority" (change)="onSelectPriorityDropDown($event)">
                 <option selected>Select Priority</option>
-                <option *ngFor="let p of priority" [value]="p[0]"> {{p[1]}} </option>
+                <option *ngFor="let p of priority" [value]="p[1]"> {{p[1]}} </option>
             </select>
 
         </div>

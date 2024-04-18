@@ -1,8 +1,10 @@
 <div class="card my-2 card-style">
     <div class="card-body">
         <p class="card-title title-bg"> {{task.title | uppercase}}</p>
-        <h6 class="card-text my-3">{{task.subject}}</h6>
-        <div class="row">
+        <p class="card-text"  >
+            {{task.subject.length > 150 ? task.subject.substring(0,150)+"..." : task.subject}}
+        </p>
+        <div class="row my-3">
             <div class="col"> <i class="fa fa-user-circle-o" aria-hidden="true"></i> {{task.author}}</div>
             
             @if( task.priority.toLowerCase() === 'high' ){

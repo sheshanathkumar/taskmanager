@@ -5,5 +5,5 @@ export class Task {
     author : string = "";
     time: string ="";
     category : string ="";
-    priority : number = 0;
+    priority : string = "";
 }
