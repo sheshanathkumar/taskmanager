@@ -76,38 +76,46 @@ export class StatusComponent {
     var statusForm = document.getElementById('addStatusFormId');
     if (statusForm != null) {
       statusForm.style.display = 'flex';
+      statusForm.style.opacity = '1'
+      statusForm.style.transition = 'all 0.8s ease';
     }
   }
 
   closeStatusForm() {
     var statusForm = document.getElementById('addStatusFormId');
     if (statusForm != null) {
-      statusForm.style.display = 'none';
+      statusForm.style.opacity = '0';
     }
   }
 
   addNewStatus(id: number) {
-    this.isLoading = true;
-    this.loadSpinner();
-    const obj = {
-      taskId: id,
-      status: this.newStatus
-    }
 
-    console.log(obj)
-    this.http.addNewStatusInTask(obj).subscribe(x => {
-      console.log(x);
-      var currStatus = new StatusObj();
-      if (x.code == 200) {
-        currStatus.title = this.newStatus;
-        currStatus.time = '' + new Date();
+    if (this.newStatus == "" || this.newStatus == null) {
+      window.alert("Please provide status")
+    } else {
 
-        this.statusList.push(currStatus);
-        this.statusList.sort((a, b) => { return Date.parse(b.time) - Date.parse(a.time) });
-        this.newStatus = "";
-        this.closeStatusForm();
+      this.isLoading = true;
+      this.loadSpinner();
+      const obj = {
+        taskId: id,
+        status: this.newStatus
       }
-    })
+
+      console.log(obj)
+      this.http.addNewStatusInTask(obj).subscribe(x => {
+        console.log(x);
+        var currStatus = new StatusObj();
+        if (x.code == 200) {
+          currStatus.title = this.newStatus;
+          currStatus.time = '' + new Date();
+
+          this.statusList.push(currStatus);
+          this.statusList.sort((a, b) => { return Date.parse(b.time) - Date.parse(a.time) });
+          this.newStatus = "";
+          this.closeStatusForm();
+        }
+      })
+    }
 
   }
 

@@ -33,7 +33,8 @@ p {
 
 .status-form{
     width: 100%;
-    display: none;
+    opacity: 0;
+    display: flex;
 }
 
 .status-button{
@@ -48,13 +49,12 @@ p {
     border-radius: 5px;
     float: right;
     padding: 5px;
-    
-    background-color: #ffffff;
+    background: radial-gradient(circle at 10% 20%, #03d4df 0%, #c6e8dd 100.2%);
 
 }
 
 .st-button:hover{
-    background: radial-gradient(circle at 10% 20%, rgb(166, 226, 229) 0%, rgb(198, 232, 221) 100.2%);
+    background: radial-gradient(circle at 10% 20%, #59ff38 0%, #05eba2 100.2%);
     font-weight: 500;
 }
 

@@ -16,6 +16,8 @@
     cursor: pointer;
     width: 18rem;
     padding: 1px 1px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .card-style:hover {
