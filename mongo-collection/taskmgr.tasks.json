@@ -8,8 +8,8 @@
   "author": "Shesho",
   "time": "2024-04-03T16:36:49.061Z",
   "status": "adding colors to card",
-  "category": "in progress",
-  "priority": "EXTREAM"
+  "category": "hold",
+  "priority": "EXTREME"
 },
 {
   "_id": {
@@ -21,7 +21,7 @@
   "author": "Shesho",
   "time": "2024-04-03T17:07:52.329Z",
   "status": "searching for nodemon package",
-  "category": "new",
+  "category": "hold",
   "priority": "MODERATE"
 },
 {
@@ -56,7 +56,7 @@
   },
   "id": 5,
   "title": "create insert task task api",
-  "subject": "Creating insert task api with post mapping and status",
+  "subject": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
   "author": "Nishu",
   "time": "2024-04-06T07:22:32.435Z",
   "status": "insert task api with status",
@@ -73,8 +73,8 @@
   "author": "Mitali",
   "time": "2024-04-07T07:22:32.435Z",
   "status": "adding description button",
-  "category": "hold",
-  "priority": "EXTREAM"
+  "category": "closed",
+  "priority": "EXTREME"
 },
 {
   "_id": {
@@ -82,7 +82,7 @@
   },
   "id": 7,
   "title": "create edit form for the task input",
-  "subject": "create edit form for the task input",
+  "subject": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
   "author": "Pratibha",
   "time": "2024-04-08T07:22:32.435Z",
   "status": "creating form for task edit",
@@ -125,7 +125,7 @@
   "author": "Pratibha",
   "time": "2024-04-06T02:49:59.566Z",
   "status": null,
-  "category": "new",
+  "category": "closed",
   "priority": "MODERATE"
 },
 {
@@ -134,7 +134,7 @@
   },
   "id": 10,
   "title": "Testing",
-  "subject": "Test for new task",
+  "subject": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
   "author": "Nishu",
   "time": "2024-04-06T02:37:00.396Z",
   "status": null,
@@ -151,7 +151,7 @@
   "author": "Shesho",
   "time": "2024-04-12T16:59:32.685Z",
   "status": null,
-  "category": "in progress",
+  "category": "3",
   "priority": "MEDIUM"
 },
 {
@@ -173,7 +173,7 @@
   },
   "id": 15,
   "title": "Google cloud setup",
-  "subject": "Setup google cloud for the deployment.",
+  "subject": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
   "author": "Shobha",
   "time": "2024-04-07T14:44:33.238Z",
   "status": null,
@@ -203,6 +203,66 @@
   "author": "Basuki",
   "time": "2024-04-07T14:40:47.175Z",
   "status": null,
-  "category": "new",
+  "category": "in progress",
   "priority": "HIGH"
+},
+{
+  "_id": {
+    "$oid": "661d8668c5aeb862bb5d9d55"
+  },
+  "title": "Deployment on shifter",
+  "subject": "Add docker to provide containerisation. ",
+  "author": "Shesho",
+  "category": "hold",
+  "priority": "HIGH",
+  "time": {
+    "$date": "2024-04-15T19:56:24.866Z"
+  },
+  "id": 58,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66215ab1158400d6bea49e77"
+  },
+  "title": "What",
+  "subject": "hoe",
+  "author": "Nishu",
+  "category": "new",
+  "priority": "High",
+  "time": {
+    "$date": "2024-04-18T17:38:57.180Z"
+  },
+  "id": 59,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66215ade158400d6bea49e7e"
+  },
+  "title": "Lorem Ipsum",
+  "subject": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scramble",
+  "author": "Shesho",
+  "category": "new",
+  "priority": "Medium",
+  "time": {
+    "$date": "2024-04-18T17:39:42.376Z"
+  },
+  "id": 60,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6621639e158400d6bea49f48"
+  },
+  "title": "Where can I get some?",
+  "subject": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
+  "author": "Basuki",
+  "category": "new",
+  "priority": "Extreme",
+  "time": {
+    "$date": "2024-04-18T18:17:02.773Z"
+  },
+  "id": 61,
+  "__v": 0
 }]
