@@ -1,35 +1,53 @@
-<div class="card card-style" [ngStyle]= 'addStyleOnCard(task.category)' >
+<div class="card card-style" [ngStyle]='addStyleOnCard(task.category)'>
     <div class="card-body">
         <p class="card-title title-bg"> {{task.title | uppercase}}</p>
-        <p class="card-text"  >
+        <p class="card-text">
             {{task.subject.length > 150 ? task.subject.substring(0,150)+"..." : task.subject}}
         </p>
-        <div class="row my-3">
-            <div class="col"> <i class="fa fa-user-circle-o" aria-hidden="true"></i> {{task.author}}</div>
-            
-            @if( task.priority.toLowerCase() === 'high' ){
-                <div class="col priority" style="background-color: #d10000; "> <i class="fa fa-bell" aria-hidden="true"></i> {{task.priority}}</div>
-            }
 
-            @if( task.priority.toLowerCase() === 'extreme' ){
-                <div class="col priority" style="background-color: #520101; "> <i class="fa fa-bell" aria-hidden="true"></i> {{task.priority}}</div>
-            }
-
-            @if( task.priority.toLowerCase() === 'moderate' ){
-                <div class="col-6 priority" style="background-color: #884800; "> <i class="fa fa-bell" aria-hidden="true"></i> {{task.priority}}</div>
-            }
-
-            @if( task.priority.toLowerCase() === 'medium' ){
-                <div class="col priority" style="background-color: #015817; "> <i class="fa fa-bell" aria-hidden="true"></i> {{task.priority}}</div>
-            }
-
-            @if( task.priority.toLowerCase() === 'low' ){
-                <div class="col priority" style="background-color: #012ff8; "> <i class="fa fa-bell" aria-hidden="true"></i> {{task.priority}}</div>
-            }
-            
-            
-            
+        <div class="col user-cell">
+            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+            {{task.author.length > 20 ? task.author.substring(0,20)+"..." : task.author }}
         </div>
+
+        @if( task.priority.toLowerCase() === 'high' ){
+        <div class="col priority" 
+            style="background: linear-gradient(110.3deg, #f88787 8.7%, #ff5c37 47.5%, #722b36 89.1%);"
+        > <i class="fa fa-bell" aria-hidden="true"></i>
+            {{task.priority}}</div>
+        }
+
+        @if( task.priority.toLowerCase() === 'extreme' ){
+        <div class="col priority" 
+        style="background: linear-gradient(110.3deg, #580101 8.7%, #ff2f2f 47.5%, #ff5555 89.1%);"
+        > <i class="fa fa-bell" aria-hidden="true"></i>
+            {{task.priority}}</div>
+        }
+
+        @if( task.priority.toLowerCase() === 'moderate' ){
+        <div class="col priority" 
+        style="background: linear-gradient(110.3deg, #f3df859d 8.7%, #fdea3efb 47.5%, #ffc400 89.1%); color: #000;"
+        > <i class="fa fa-bell" aria-hidden="true"></i>
+            {{task.priority}}</div>
+        }
+
+        @if( task.priority.toLowerCase() === 'medium' ){
+        <div class="col priority" 
+        style="background: linear-gradient(110.3deg, #9bf5ae 8.7%, #76ff6a 47.5%, #2d7c1d 89.1%); color: #000;"
+        > <i class="fa fa-bell" aria-hidden="true"></i>
+            {{task.priority}}</div>
+        }
+
+        @if( task.priority.toLowerCase() === 'low' ){
+        <div class="col priority" 
+        style="background: linear-gradient(110.3deg, #b5b6f8 8.7%, #6077fc 47.5%, #2415ff 89.1%); color: #000;"
+        > <i class="fa fa-bell" aria-hidden="true"></i>
+            {{task.priority}}</div>
+        }
+
+
+
+
         <p class="my-2">{{task.time| date: 'yyyy/MM/dd hh:mm:ss a'}}</p>
     </div>
 </div>

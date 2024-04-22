@@ -7,7 +7,7 @@ import { NewTask } from '../util/NewTask';
 import { Status } from '../util/Status';
 import { ModelApiResponse } from '../util/modelApiResponse';
 import { StatusObj } from '../util/StatusObj';
-import { environment } from '../../environments/environment.development';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -58,7 +58,8 @@ export class HttpService {
       catId: catId,
       taskId:taskId
     }
-    return this.http.post<ModelApiResponse>(this.updateCategoryOfTaskUrl, body);
+    return this.http.post<ModelApiResponse>( `${this.domain}${this.updateCategoryOfTaskUrl}`, 
+        body);
   }
 
 }

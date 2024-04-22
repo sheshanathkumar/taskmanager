@@ -136,12 +136,12 @@ export class StatusComponent {
       window.alert("Please select a value!");
     } else {
       console.log(this.catValue, this.currTask.id);
-      this.http.updateCategoryOfTask(this.catValue, this.currTask.id).subscribe(x => {
-        console.log("response ", x);
-        this.router.navigate(['/']);
-      })
+      this.http.updateCategoryOfTask(this.catValue, this.currTask.id)
+        .subscribe(x => {
+          console.log("response ", x);
+          this.router.navigate(['/']);
+        })
     }
-
   }
 
 

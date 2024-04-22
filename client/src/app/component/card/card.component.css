@@ -30,12 +30,23 @@
 }
 
 .priority {
-    margin-right: 15px;
-    font-weight: 500;
+    font-weight: 600;
     color: #fff;
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
+}
+
+.user-cell{
+    background: radial-gradient(circle at 12.3% 19.3%, #5558da 0%, #5fd1f9 100.2%);; 
+    border-radius: 5px; 
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    gap: 5px;
+    font-weight: 500;
 }

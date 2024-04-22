@@ -24,6 +24,8 @@ const STATUS_COUNTER_ID = process.env.STATUS_COUNTER_ID;
 
 app.use(express.json())
 
+//app.use( express.static("dist/browser") )
+
 app.use(cors());
 
 var corsOptions = {
@@ -46,7 +48,7 @@ app.listen(PORT, () => {
 
 app.get("/v1/status/all", (req, res) => {
 
-    status.find()
+    statusObj.find()
         .then((result) => {
             res.send(result)
         })
