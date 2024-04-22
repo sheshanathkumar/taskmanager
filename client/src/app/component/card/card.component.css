@@ -1,17 +1,4 @@
-.title-bg {
-    background: linear-gradient(to top, #dfe9f3 0%, white 100%);
-    border-radius: 10px;
-    padding: 2px 10px;
-    margin: 0px 5px 10px 5px;
-    box-shadow: 0px 4px 15px -1px #505050;
-}
-
-.title-bg:hover {
-    box-shadow: none;
-}
-
 .card-style {
-    background: radial-gradient(circle at 10% 20%, rgb(166, 226, 229) 0%, rgb(198, 232, 221) 100.2%);
     box-shadow: 1px 1px 10px #ffffff;
     cursor: pointer;
     width: 18rem;
@@ -24,8 +11,22 @@
     box-shadow: none;
 }
 
+.title-bg {
+    background: linear-gradient(to top, #dfe9f3 0%, white 100%);
+    border-radius: 10px;
+    padding: 2px 10px;
+    margin: 0px 5px 10px 5px;
+    box-shadow: 0px 4px 15px -1px #505050;
+}
+
+.title-bg:hover {
+    box-shadow: none;
+}
+
 .card-text {
     margin-top: 10px;
+    font-size: medium;
+    font-weight: 500;
 }
 
 .priority {

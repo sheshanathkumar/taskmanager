@@ -5,6 +5,7 @@ import { Task } from '../../util/Task';
 import { CardComponent } from '../card/card.component';
 import { Router } from '@angular/router';
 import { SpinnerComponent } from '../spinner/spinner.component';
+import { error } from 'console';
 
 @Component({
   selector: 'app-home',
@@ -23,23 +24,37 @@ export class HomeComponent {
   holdTasks: Task[] = [];
   closedTasks: Task[] = [];
 
-  isLoading : boolean = true;
+  isLoading: boolean = true;
 
   constructor(private httpClient: HttpService, private router: Router) {
+    this.loadSpinner();
+  }
 
+  loadSpinner() {
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 2000)
   }
 
   ngOnInit() {
 
-    this.httpClient.getAllCategoryDetail().subscribe((data) => {
-      this.categories = data;
+    this.httpClient.getAllCategoryDetail().subscribe({
+      next: (data) => {
+        this.categories = data;
+      }, error: (error) => {
+        this.router.navigateByUrl('/notfound')
+      }
     })
 
-    this.httpClient.getAllTaskDetail().subscribe((data) => {
+    this.httpClient.getAllTaskDetail().subscribe({
+      next: (data) => {
 
-      this.tasks = data;
-      console.log("task data \n", this.tasks);
-      this.saperateTaskCategoryWise(this.tasks);
+        this.tasks = data;
+        console.log("task data \n", this.tasks);
+        this.saperateTaskCategoryWise(this.tasks);
+      }, error: (error) => {
+        this.router.navigateByUrl('/notfound')
+      }
     })
     console.log(this.holdTasks, this.newTasks);
   }
@@ -63,11 +78,11 @@ export class HomeComponent {
   }
 
 
-  getStatus(task : Task) {
+  getStatus(task: Task) {
     console.log(task)
     this.router.navigate(['/status'], {
-      state: {currentTask: task}
-    } );
+      state: { currentTask: task }
+    });
   }
 
 

@@ -7,6 +7,7 @@ import { NewTask } from '../util/NewTask';
 import { Status } from '../util/Status';
 import { ModelApiResponse } from '../util/modelApiResponse';
 import { StatusObj } from '../util/StatusObj';
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
@@ -21,32 +22,34 @@ export class HttpService {
   private addStatusInTaskUrl = Constant.ADD_NEW_STATUS_IN_TASK_URL;
   private updateCategoryOfTaskUrl = Constant.UPDATE_CATEGORY_OF_TASK_URL;
 
+  private domain = environment.domain;
+
   constructor( private http: HttpClient ) {   }
 
   getAllTaskDetail() :Observable<Task[]> {
-    return this.http.get <Task[]>(this.getAllTaskUrl);
+    return this.http.get <Task[]>( `${this.domain}${this.getAllTaskUrl}`);
   }
 
   getAllCategoryDetail () {
-    return this.http.get(this.getAllCategoryUrl)
+    return this.http.get(`${this.domain}${this.getAllCategoryUrl}`)
   }
 
 
   getAllUsers () {
-    return this.http.get(this.getAllUsersUrl);
+    return this.http.get(`${this.domain}${this.getAllUsersUrl}`);
   }
 
   createNewTask( task : NewTask) {
-    return this.http.post(this.createNewTaskUrl, task);
+    return this.http.post( `${this.domain}${this.createNewTaskUrl}`, task);
   }
 
   getStatusById(taskId : Number) : Observable<any> {
-    let url = `${this.getStatusByIdUrl}${taskId}`;
+    let url = `${this.domain}${this.getStatusByIdUrl}${taskId}`;
     return this.http.get <any>(url);
   }
 
   addNewStatusInTask ( status : any ) : Observable<ModelApiResponse> {
-    return this.http.post<ModelApiResponse> (this.addStatusInTaskUrl, status);
+    return this.http.post<ModelApiResponse> ( `${this.domain}${this.addStatusInTaskUrl}`, status);
   }
   
   updateCategoryOfTask( catId: string, taskId:number) : Observable<ModelApiResponse> {

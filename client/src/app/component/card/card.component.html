@@ -1,4 +1,4 @@
-<div class="card card-style">
+<div class="card card-style" [ngStyle]= 'addStyleOnCard(task.category)' >
     <div class="card-body">
         <p class="card-title title-bg"> {{task.title | uppercase}}</p>
         <p class="card-text"  >

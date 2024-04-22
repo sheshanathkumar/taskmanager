@@ -24,6 +24,8 @@
     "@fortawesome/angular-fontawesome": "^0.14.1",
     "bootstrap": "^5.3.3",
     "express": "^4.18.2",
+    "global": "^4.4.0",
+    "http-server": "^14.1.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

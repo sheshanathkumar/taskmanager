@@ -1,0 +1,27 @@
+.pannel{
+    height: 90vh;
+    background-image: url('../../../assets/welcome.jpg');
+    backdrop-filter: blur(10px);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.welcome{
+    height: 10vh;
+    width: 15vw;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: azure;
+    margin-top: 40vh;
+}
+
+.welcome-button{
+    width: 100%;
+    font-weight: bold;
+    font-size: xx-large;
+    box-shadow: 0px 0px 5px 5px #383838;
+}
+
+.welcome-button:hover{
+    box-shadow: none;
+}

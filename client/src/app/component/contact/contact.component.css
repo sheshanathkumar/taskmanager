@@ -8,11 +8,14 @@
 
 .contact-grid {
     width: 35vw;
-    
     background: radial-gradient(circle at 10% 20%, rgb(166, 226, 229) 0%, rgb(198, 232, 221) 100.2%);
-    height: 100%;
+    height: max-content;
     border-radius: 20px;
     box-shadow: 2px 2px 50px #010d33;
+}
+
+row {
+    height: 100%;
 }
 
 
