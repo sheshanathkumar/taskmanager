@@ -24,7 +24,7 @@ const STATUS_COUNTER_ID = process.env.STATUS_COUNTER_ID;
 
 app.use(express.json())
 
-//app.use( express.static("dist/browser") )
+app.use( express.static("dist/browser") )
 
 app.use(cors());
 
