@@ -4,14 +4,14 @@ var cors = require('cors')
 
 const env = require("dotenv").config();
 
-const category = require('./task/models/Category')
-const tasks = require('./task/models/Task')
-const statusObj = require('./task/models/Status')
-const users = require('./task/models/Users')
-const taskCounter = require('./task/models/TaskCounter')
-const statusCounter = require('./task/models/StatusCounter');
-const Task = require("./task/models/Task");
-const Status = require("./task/models/Status");
+const category = require('./src/models/Category')
+const tasks = require('./src/models/Task')
+const statusObj = require('./src/models/Status')
+const users = require('./src/models/Users')
+const taskCounter = require('./src/models/TaskCounter')
+const statusCounter = require('./src/models/StatusCounter');
+const Task = require("./src/models/Task");
+const Status = require("./src/models/Status");
 
 const app = express();
 
@@ -38,11 +38,15 @@ mongoose.connect(DB_URL)
     .then(() => {
         console.log("Mongoose Connected")
     })
-    .catch((err) => console.log("Monog Error ", err))
+    .catch((err) => console.log("Mondo DB Error \n", err))
 
 
 app.listen(PORT, () => {
     console.log("Running on port ", PORT);
+})
+
+app.get("/ping", (req, res) => {
+    res.status(200).json({ "stauts": "success", "code": 200, "message": "Ping Success" })
 })
 
 
